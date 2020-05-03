@@ -3,7 +3,9 @@
 </div>
 
 <%= form_with model: @post, class: :form, local: true do |form| %>
-  <%= form.text_field :company, placeholder: :Company, class: :form__title %>
-  <%= form.text_field :name, placeholder: :Name, class: :form__text %>
+  <%= form.text_field :company, placeholder: :Company %>
+  <%= form.text_field :name, placeholder: :Name %>
+  <%= form.text_area :detail, placeholder: :Detail %>
+  <%= form.file_field :image, placeholder: :Image %>
   <%= form.submit '保存する', class: :form__btn %>
 <% end %>
