@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resources :posts do
   end
+  resources :users do
+  end
 end
