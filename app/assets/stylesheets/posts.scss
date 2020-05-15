@@ -1,22 +1,59 @@
 body {
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQzkpCpMMrHAFvYhkiqQEsrGOawFlRMm1BTV3AO0VtXLE-a11y5&usqp=CAU);
-  background-size: cover;
-  position: relative;
-  a {
-    color: black;
-    text-decoration: none;
-  }
+  #wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQzkpCpMMrHAFvYhkiqQEsrGOawFlRMm1BTV3AO0VtXLE-a11y5&usqp=CAU);
+    background-size: cover;
+    font-family: fantasy;
 
-  .header {
-    height: 60px;
-    width: 100;
-    padding: 0 150px;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    
-    &__title {
-      font-size: 60px;
+    .header {
+      height: 60px;
+      width: 100;
+      padding: 50px 100px 0px 100px;
+      display: flex;
+      justify-content: space-between;
+      
+      &__title {
+        font-size: 60px;
+        font-weight: bold;
+      }
+    }
+
+    .contents {
+      margin-top: 100px;
+      width: 100;
+      padding: 0 200px;
+      justify-content: space-between;
+      display: flex;
+
+      &__explanation {
+        margin-top: 120px;
+        line-height: 50px;
+        font-size: 20px;
+      }
+
+      &__session-field {
+        margin-top: 50px;
+        height: 350px;
+        width: 300px;
+        text-align: center;
+        line-height: 30px;
+      } 
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .field {
+        margin-top: 20px;
+      }
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
     }
   }
 }
