@@ -9,13 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <header class="header">
-        <div class="header__title">
-          <%= link_to "B-memo", root_path, class: "header__title--text" %>
-        </div>
-    </header>
-    <div class="contents">
+    <div id="wrapper">
       <%= yield %>
+      <footer>
+        <p>
+          (C) 2020 B-memo.
+        </p>
+      </footer>
     </div>
   </body>
 </html>
