@@ -1,27 +1,24 @@
-<div class="postTitle">
-  メモ一覧
+<div class="user-info">
+  <% if user_signed_in? %>
+    <%= link_to current_user.nickname, user_path(current_user), class: "user-btn" %>
+    <%= link_to "新規投稿", new_post_path, class: "user-btn" %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user-btn" %>
+  <% end %>
 </div>
-<% @posts.each do |post| %>
-  <div class="content">
-    <div class="content__left">
-      <div class="content__left--image"></div>
-    </div>
-    <div class="content__right">
-      <div class="content__right__top">
-        <%= link_to post.company, post_path(post.id), class: "content__right__top--title" %>
-      </div>
-      <div class="content__right__bottom">
-        <div class="content__right__bottom--date">
+<div class="postTitle">
+  名刺一覧
+</div>
+<div class="user-contents">
+  <% @posts.each do |post| %>
+    <div class="user-content">
+      <div class="user-content__text">
+        <div class="user-content__text__top">
+          <%= link_to post.company, post_path(post.id) %>
+        </div>
+        <div class="user-content__text__bottom">
           <%= post.name %>
-          <div class="header__right">
-            <% if user_signed_in? %>
-              <%= link_to current_user.nickname, user_path(current_user), class: "header__right--btn" %>
-              <%= link_to "新規投稿", new_post_path, class: "header__right--btn" %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn" %>
-            <% end %>
-          </div>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

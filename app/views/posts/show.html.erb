@@ -1,6 +1,12 @@
 <div class="mypage">
     <%= link_to "メモ一覧", root_path %>
 </div>
+<% if user_signed_in? && current_user.id == @post.user_id %>
+  <div class="postManage">
+    <%= link_to "編集", edit_post_path(@post.id), class: "postManage__edit" %>
+    <%= link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete" %>
+  </div>
+<% end %>
 <div class="postTitle">
   <%= @post.company %>
 </div>
@@ -12,12 +18,6 @@
 </div>
 <div class="postAuthor">
 </div>
-<% if user_signed_in? && current_user.id == @post.user_id %>
-  <div class="postManage">
-    <%= link_to "編集", edit_post_path(@post.id), class: "postManage__edit" %>
-    <%= link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete" %>
-  </div>
-<% end %>
 <div class="postText">
   <%= simple_format @post.detail %>
 </div>
