@@ -1,0 +1,43 @@
+#wrapper {
+
+  .save-contents {
+    height: 500px;
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 100px;
+    font-size: 20px;
+    text-align: center;
+
+    .form {
+
+      &__text {
+        margin-bottom: 40px;
+        height: 40px;
+        width: 350px;
+      }
+      &__area {
+        height: 40px;
+        width: 350px;
+      }
+      &__btn {
+        display       : inline-block;
+        border-radius : 5%;          /* 角丸       */
+        font-size     : 18pt;        /* 文字サイズ */
+        text-align    : center;      /* 文字位置   */
+        cursor        : pointer;     /* カーソル   */
+        padding       : 12px 12px;   /* 余白       */
+        background    : #ffffff;     /* 背景色     */
+        color         : #6666ff;     /* 文字色     */
+        line-height   : 1em;         /* 1行の高さ  */
+        transition    : .3s;         /* なめらか変化 */
+        box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+        border        : 2px solid #ffffff;    /* 枠の指定 */
+      }
+      &__btn:hover {
+        box-shadow    : none;        /* カーソル時の影消去 */
+        color         : #ffffff;     /* 背景色     */
+        background    : #6666ff;     /* 文字色     */
+      }
+    }
+  }
+}

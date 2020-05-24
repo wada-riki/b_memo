@@ -1,23 +1,23 @@
-<div class="mypage">
-    <%= link_to "メモ一覧", root_path %>
+<div class="user-info">
+  <%= link_to "メモ一覧", root_path, class: "user-btn" %>
+  <% if user_signed_in? && current_user.id == @post.user_id %>
+      <%= link_to "編集", edit_post_path(@post.id), class: "user-btn" %>
+      <%= link_to "削除", post_path(@post.id), method: :delete, class: "user-btn" %>
+  <% end %>
 </div>
-<% if user_signed_in? && current_user.id == @post.user_id %>
-  <div class="postManage">
-    <%= link_to "編集", edit_post_path(@post.id), class: "postManage__edit" %>
-    <%= link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete" %>
-  </div>
-<% end %>
 <div class="postTitle">
   <%= @post.company %>
 </div>
-<div class="post.business-man">
-  <%= @post.name%>
-</div>
-<div class="postDate">
-  <%= @post.created_at %>
-</div>
-<div class="postAuthor">
-</div>
-<div class="postText">
-  <%= simple_format @post.detail %>
+<div class="show-contents">
+  <div class="post.business-man">
+    <%= @post.name%>
+  </div>
+  <div class="postDate">
+    <%= @post.created_at %>
+  </div>
+  <div class="postAuthor">
+  </div>
+  <div class="postText">
+    <%= simple_format @post.detail %>
+  </div>
 </div>
